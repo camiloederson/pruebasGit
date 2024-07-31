@@ -27,32 +27,34 @@ header {
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    height: 60px; /* Altura fija para el header */
-    border-bottom: 0px solid #ddd; /* Línea divisoria muy sutil */
+    height: 80px; /* Aumenta la altura del header si es necesario */
 }
 
+/* Ajuste del tamaño del título */
 header h1 {
     margin: 0;
-    font-size: 1.8em;
+    font-size: 2.5em; /* Tamaño del título en el header */
 }
 
 header h1 span {
-    color: orangered; /* Color específico para "Ederson" */
+    color: orangered; /* Color específico para "ederson" */
+    font-size: 1.2em; /* Tamaño relativo para "ederson" */
 }
 
-nav {
+/* Navegación Principal */
+#main-nav {
     display: flex;
     gap: 15px;
 }
 
-nav a {
+#main-nav a {
     color: #333; /* Gris oscuro para los links */
     text-decoration: none;
     font-size: 1.2em;
     transition: color 0.3s, transform 0.3s;
 }
 
-nav a:hover {
+#main-nav a:hover {
     color: orangered; /* Hover en orangered */
     transform: scale(1.05);
 }
@@ -77,7 +79,7 @@ nav a:hover {
 
 /* Contenedor Principal */
 .container {
-    margin-top: 60px; /* Ajuste el margen superior para evitar que el contenido quede oculto bajo el header */
+    margin-top: 80px; /* Ajuste el margen superior para evitar que el contenido quede oculto bajo el header */
     padding: 0;
     background-color: #f5f5f5; /* Fondo white smoke para el contenedor */
     position: relative;
@@ -100,9 +102,8 @@ nav a:hover {
 
 /* Títulos */
 .section h2 {
-    font-size: 2.5em;
+    font-size: 2.5em; /* Tamaño de fuente del título */
     margin-bottom: 20px;
-    border-bottom: 1px solid #333; /* Línea muy delgada y gris oscuro debajo del título */
     padding-bottom: 5px;
 }
 
@@ -202,17 +203,22 @@ footer p {
 
 /* Responsividad */
 @media (min-width: 992px) {
-    .contact-form-container {
-        width: 50%;
-        height: auto;
-        margin-top: 5%;
-        margin-bottom: 5%;
+    #main-nav {
+        display: flex; /* Mostrar el menú en pantallas grandes */
+        flex-direction: row; /* Alinear los enlaces horizontalmente */
+        background-color: transparent; /* Fondo transparente para el menú en pantallas grandes */
+        position: static; /* No posicionar el menú de forma absoluta */
+        box-shadow: none; /* Sin sombra para el menú en pantallas grandes */
+    }
+    
+    .menu-toggle {
+        display: none; /* Ocultar el botón de menú en pantallas grandes */
     }
 }
 
 @media (max-width: 768px) {
-    nav {
-        display: none;
+    #main-nav {
+        display: none; /* Ocultar el menú en pantallas pequeñas por defecto */
         flex-direction: column;
         width: 100%;
         background-color: #333;
@@ -223,17 +229,18 @@ footer p {
         border-radius: 0 0 8px 8px;
     }
 
-    nav a {
+    #main-nav.active {
+        display: flex; /* Mostrar el menú cuando tiene la clase active */
+    }
+
+    #main-nav a {
         padding: 10px;
         font-size: 1.5em;
+        color: white; /* Color blanco para el texto en el menú desplegable */
     }
 
     .menu-toggle {
-        display: block;
-    }
-
-    .menu-open nav {
-        display: flex;
+        display: block; /* Mostrar el botón de menú en pantallas pequeñas */
     }
 }
 
@@ -270,7 +277,6 @@ footer p {
     margin-bottom: 20px;
     text-align: left; /* Alineación a la izquierda del título */
     color: #333; /* Gris oscuro para el título */
-    border-bottom: 1px solid #e0e0e0; /* Línea muy suave y casi invisible debajo del título */
     padding-bottom: 5px;
 }
 
@@ -326,7 +332,6 @@ h2, h3, h4, h5, h6 {
     text-align: left; /* Alinea todos los títulos a la izquierda */
     margin: 0;
     padding: 0;
-    border-bottom: 1px solid #e0e0e0; /* Línea muy suave y casi invisible debajo de los títulos */
 }
 
 /* Responsividad */
