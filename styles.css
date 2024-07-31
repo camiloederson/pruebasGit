@@ -1,0 +1,342 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #333; /* Gris oscuro */
+    background-color: #f5f5f5; /* Fondo white smoke */
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Evitar el scrollbar horizontal */
+}
+
+html, body {
+    height: 100%; /* Asegura que el body cubra el 100% del viewport */
+}
+
+/* Header */
+header {
+    background-color: #f5f5f5; /* Fondo white smoke para el header */
+    color: #333; /* Gris oscuro para el texto del header */
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    height: 60px; /* Altura fija para el header */
+    border-bottom: 0px solid #ddd; /* Línea divisoria muy sutil */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+header h1 span {
+    color: orangered; /* Color específico para "Ederson" */
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #333; /* Gris oscuro para los links */
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: orangered; /* Hover en orangered */
+    transform: scale(1.05);
+}
+
+/* Botón de Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #333; /* Gris oscuro para el botón de toggle */
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: inline;
+}
+
+#close-icon {
+    display: none;
+}
+
+/* Contenedor Principal */
+.container {
+    margin-top: 60px; /* Ajuste el margen superior para evitar que el contenido quede oculto bajo el header */
+    padding: 0;
+    background-color: #f5f5f5; /* Fondo white smoke para el contenedor */
+    position: relative;
+    overflow: hidden;
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+/* Secciones */
+.section {
+    min-height: 100vh; /* Asegura que la sección tenga al menos la altura del viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    background: #f5f5f5; /* Fondo white smoke para las secciones */
+}
+
+/* Títulos */
+.section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333; /* Línea muy delgada y gris oscuro debajo del título */
+    padding-bottom: 5px;
+}
+
+/* Líneas Horizontales */
+hr {
+    border: 0;
+    height: 1px;
+    background: #333; /* Línea horizontal gris oscuro */
+    margin: 20px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333; /* Gris oscuro para los links */
+    font-weight: bold;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+ul li a:hover {
+    color: orangered; /* Hover en orangered */
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #f5f5f5; /* Fondo white smoke para el footer */
+    color: #333; /* Gris oscuro para el texto del footer */
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Estilo para el formulario de contacto */
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form-container h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333; /* Gris oscuro para el título del formulario */
+}
+
+.form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #00bfff;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+.btn-primary {
+    background-color: #00bfff;
+    border-color: #00bfff;
+}
+
+.btn-primary:hover {
+    background-color: #0099cc;
+    border-color: #007acc;
+}
+
+/* Responsividad */
+@media (min-width: 992px) {
+    .contact-form-container {
+        width: 50%;
+        height: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 1.5em;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-open nav {
+        display: flex;
+    }
+}
+
+/* Sección de Proyectos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #ffffff; /* Fondo blanco para las tarjetas de proyecto */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección Sobre Mí */
+#about {
+    background: #f5f5f5; /* Fondo white smoke para la sección */
+    padding: 60px 20px; /* Ajusta el padding para agregar márgenes */
+    position: relative; /* Necesario para posicionar la línea de forma absoluta */
+}
+
+#about h2 {
+    font-size: 2.5em; /* Tamaño de fuente del título */
+    margin-bottom: 20px;
+    text-align: left; /* Alineación a la izquierda del título */
+    color: #333; /* Gris oscuro para el título */
+    border-bottom: 1px solid #e0e0e0; /* Línea muy suave y casi invisible debajo del título */
+    padding-bottom: 5px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre las dos columnas */
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
+}
+
+.about-text {
+    flex: 0 0 60%; /* Toma el 60% del espacio disponible */
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1.2em; /* Tamaño de fuente del texto */
+    line-height: 1.6; /* Espacio entre líneas */
+    color: #333; /* Gris oscuro para el texto */
+    font-weight: 300; /* Peso de la fuente más liviano */
+}
+
+.about-image {
+    flex: 0 0 40%; /* Toma el 40% del espacio disponible */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    position: relative; /* Necesario para la cortina transparente */
+}
+
+.about-image img {
+    border-radius: 50%; /* Hace la imagen redondeada */
+    border: 2px solid #9c9c9c9b; /* Borde alrededor de la imagen */
+    width: 80%; /* Ajusta el ancho de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    filter: grayscale(50%); /* Aplica un filtro en escala de grises */
+    transition: filter 0.3s ease; /* Suaviza la transición del filtro */
+}
+
+.about-image img:hover {
+    filter: grayscale(0%); /* Vuelve la imagen a su color original cuando se pasa el cursor sobre ella */
+}
+
+.about-image img {
+    position: relative; /* Necesario para que la imagen esté sobre la cortina */
+    z-index: 2; /* Asegura que la imagen esté por encima de la cortina */
+}
+
+/* Títulos Generales */
+h2, h3, h4, h5, h6 {
+    text-align: left; /* Alinea todos los títulos a la izquierda */
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #e0e0e0; /* Línea muy suave y casi invisible debajo de los títulos */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image {
+        margin-top: 20px;
+    }
+}
