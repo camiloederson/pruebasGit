@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     color: #333; /* Gris oscuro */
-    background-color: #f5f5f5; /* Fondo white smoke */
+    background-color: #ffffffff; /* Fondo white smoke */
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden; /* Evitar el scrollbar horizontal */
@@ -15,7 +15,7 @@ html, body {
 
 /* Header */
 header {
-    background-color: #f5f5f5; /* Fondo white smoke para el header */
+    background-color: #ffffff; /* Fondo white smoke para el header */
     color: #333; /* Gris oscuro para el texto del header */
     padding: 15px 20px;
     position: fixed;
@@ -81,7 +81,7 @@ header h1 span {
 .container {
     margin-top: 80px; /* Ajuste el margen superior para evitar que el contenido quede oculto bajo el header */
     padding: 0;
-    background-color: #f5f5f5; /* Fondo white smoke para el contenedor */
+    background-color: #ffffff; /* Fondo white smoke para el contenedor */
     position: relative;
     overflow: hidden;
     scroll-behavior: smooth; /* Desplazamiento suave */
@@ -97,7 +97,7 @@ header h1 span {
     padding: 20px;
     box-sizing: border-box;
     width: 100%;
-    background: #f5f5f5; /* Fondo white smoke para las secciones */
+    background: #ffffff; /* Fondo white smoke para las secciones */
 }
 
 /* Títulos */
@@ -137,7 +137,7 @@ ul li a:hover {
 }
 
 footer {
-    background-color: #f5f5f5; /* Fondo white smoke para el footer */
+    background-color: #ffffff; /* Fondo white smoke para el footer */
     color: #333; /* Gris oscuro para el texto del footer */
     text-align: center;
     padding: 20px;
@@ -152,38 +152,49 @@ footer p {
 
 /* Estilo para el formulario de contacto */
 .contact-form-container {
-    max-width: 600px;
-    margin: 0 auto;
+    width: 75vw; /* Asegura que el formulario ocupe el 90% del ancho del viewport */
+    max-width: 100%; /* No excede el ancho del viewport */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
     padding: 20px;
-    background-color: #ffffff; /* Fondo blanco para el formulario */
+    background-color: #ffffff; /* Fondo whitesmoke para el formulario */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
 }
 
 .contact-form-container h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 2.5em;
     color: #333; /* Gris oscuro para el título del formulario */
 }
 
+/* Estilo de las etiquetas */
 .form-label {
     font-weight: bold;
-    margin-bottom: 5px;
+    margin: 10px 0; /* Mayor margen superior e inferior para las etiquetas */
     text-align: left;
+    font-family: 'Courier New', Courier, monospace; /* Fuente computarizada */
 }
 
+/* Estilo de los grupos de formularios */
 .form-group {
     display: flex;
     flex-direction: column;
 }
 
+/* Estilo de los campos de entrada */
 .form-control {
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* Borde gris suave */
     border-radius: 4px;
     padding: 10px;
+    background-color: transparent; /* Fondo transparente */
+    color: #333; /* Texto gris oscuro */
+    width: 100%; /* Ancho del 100% del contenedor */
+    max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    font-family: 'Courier New', Courier, monospace; /* Fuente computarizada */
 }
 
 .form-control:focus {
@@ -191,15 +202,37 @@ footer p {
     box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
 }
 
+/* Estilo del botón de enviar */
 .btn-primary {
     background-color: #00bfff;
     border-color: #00bfff;
+    width: 100%; /* Asegura que el botón ocupe todo el ancho del contenedor */
+    border-radius: 4px;
+    color: #fff; /* Color del texto del botón */
+    padding: 10px; /* Espacio interno del botón */
+    font-weight: bold; /* Texto en negrita */
+    font-family: 'Courier New', Courier, monospace; /* Fuente computarizada */
+    text-align: center; /* Centra el texto del botón */
+    transition: background-color 0.3s, border-color 0.3s; /* Suaviza la transición del color de fondo y del borde */
 }
 
 .btn-primary:hover {
     background-color: #0099cc;
     border-color: #007acc;
 }
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 10px; /* Reduce el padding en pantallas más pequeñas */
+        width: 90vw; /* Asegura que el formulario ocupe hasta el 90% del ancho del viewport */
+    }
+
+    .form-control {
+        width: 100%; /* Asegura que los campos de entrada ocupen el 100% del contenedor */
+    }
+}
+
 
 /* Responsividad */
 @media (min-width: 992px) {
@@ -245,29 +278,97 @@ footer p {
 }
 
 /* Sección de Proyectos */
+#projects {
+    width: 75vw; /* Asegura que la sección de proyectos ocupe el 75% del ancho del viewport */
+    background: #ffffff; /* Fondo white smoke para la sección */
+    padding: 60px 20px; /* Ajusta el padding para agregar márgenes */
+    position: relative; /* Necesario para el posicionamiento relativo */
+    margin: 0 auto; /* Centra la sección horizontalmente */
+}
+
+/* Contenedor de tarjetas de proyecto */
+.projects-container {
+    display: flex; /* Usa flexbox para alinear las tarjetas */
+    overflow: hidden; /* Evita el scrollbar horizontal */
+    justify-content: center; /* Centra el contenido en el contenedor */
+    width: 100%; /* Asegura que el contenedor no se expanda más allá del viewport */
+}
+
+/* Contenedor de tarjetas de proyecto */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    display: flex; /* Usa flexbox para alinear las tarjetas en una línea */
+    flex-wrap: nowrap; /* Evita que las tarjetas se muevan a la siguiente línea */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 0; /* Sin padding adicional */
+    margin: 0; /* Sin margen adicional */
+    justify-content: center; /* Centra las tarjetas en el contenedor */
 }
 
+/* Tarjeta de proyecto */
 .project-card {
-    background: #ffffff; /* Fondo blanco para las tarjetas de proyecto */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0); /* Fondo transparente */
+    border: 1px solid #d2d2d2; /* Borde gris oscuro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     padding: 20px;
-    text-align: center;
+    text-align: left; /* Alinea el texto a la izquierda */
     transition: transform 0.3s, box-shadow 0.3s;
+    min-width: 250px; /* Anchura mínima para las tarjetas */
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+/* Botón de "Ver más" */
+.project-card .btn-primary {
+    display: inline; /* Hace que el botón se comporte como un bloque */
+    margin-top: 1rem; /* Espacio arriba del botón */
+    margin-left: auto; /* Alinea el botón a la derecha dentro de un contenedor flex */
+    background-color: #0c92be; /* Color celeste para el fondo del botón */
+    border: 1px solid #ddd; /* Borde delgado y gris suave */
+    border-radius: 4px; /* Bordes redondeados para el botón */
+    color: #fff; /* Color del texto del botón */
+    text-align: center; /* Alinea el texto del botón al centro */
+    padding: 5px 10px; /* Reduce el espacio interno del botón para hacerlo más delgado */
+    text-decoration: none; /* Sin subrayado en el texto del botón */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s, border-color 0.3s; /* Suaviza la transición del color de fondo y del borde */
+    font-size: 0.9em; /* Tamaño de fuente ligeramente más pequeño */
 }
+
+/* Efecto hover para el botón */
+.project-card .btn-primary:hover {
+    background-color: #ef7000; /* Color más oscuro al pasar el ratón */
+    border-color: #ddd; /* Mantiene el borde gris suave en hover */
+}
+
+/* Ajustes para dispositivos más pequeños */
+@media (max-width: 768px) {
+    #projects {
+        width: 90vw; /* Asegura que la sección de proyectos ocupe el 90% del ancho del viewport en pantallas pequeñas */
+        padding: 10px; /* Ajusta el padding para pantallas pequeñas */
+    }
+
+    .projects-container {
+        overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
+    }
+
+    .projects-grid {
+        flex-direction: column; /* Cambia la disposición a columna en pantallas pequeñas */
+        align-items: center; /* Centra las tarjetas en la columna */
+        width: 100%; /* Asegura que el contenedor de tarjetas no se expanda más allá del viewport */
+    }
+
+    .project-card {
+        width: 100%; /* Asegura que las tarjetas ocupen el 100% del ancho disponible en la vista móvil */
+        margin-bottom: 20px; /* Espacio entre tarjetas en vista de columna */
+    }
+}
+
+
+
 
 /* Sección Sobre Mí */
 #about {
-    background: #f5f5f5; /* Fondo white smoke para la sección */
+    background: #ffffff; /* Fondo white smoke para la sección */
     padding: 60px 20px; /* Ajusta el padding para agregar márgenes */
     position: relative; /* Necesario para posicionar la línea de forma absoluta */
 }
